@@ -1,29 +1,37 @@
 <template>
-  <div class="my-container bg-blue-900">
+  <footer class="my-container bg-blue-900">
     <div class="py-16 text-white md:px-16">
-      <div class="flex flex-col md:flex-row justify-between">
-        <div class="flex flex-col mb-4 max-w-xs">
-          <div><img class="mb-0.5 md:mb-3" src="../assets/footer_logo.svg" alt="" /></div>
-          <div>Flippay is a financial technology company based in nigeria</div>
-          <div>Address: No 23 idowu street VI lagos, Nigeria</div>
+      <div
+        class="grid grid-cols-1 sm:grid-cols-4 md:grid-cols-12 justify-between"
+      >
+        <div class="md:col-start-1 md:col-end-7 flex flex-col mb-4 max-w-xs">
+          <div>
+            <img
+              class="mb-0.5 md:mb-3"
+              src="../assets/footer_logo.svg"
+              alt=""
+            />
+          </div>
         </div>
-        <div class="flex flex-col mb-4">
+        <div class="md:col-start-7 md:col-end-9 flex flex-col mb-4">
           <div class="font-bold mb-0.5 md:mb-3">Company</div>
-          <nuxt-link to="/">About</nuxt-link>
-          <nuxt-link to="/">Contact us</nuxt-link>
+          <a class="opacity-70 my-1" target="_blank" href="https://flippay.co/about">About</a>
+          <a class="opacity-70 my-1" target="_blank" href="https://flippay.co/contact">Contact us</a>
         </div>
-        <div class="flex flex-col mb-4">
+        <div class="md:col-start-9 md:col-end-11 flex flex-col mb-4">
           <div class="font-bold mb-0.5 md:mb-3">Products</div>
-          <nuxt-link to="/">Business</nuxt-link>
-          <nuxt-link to="/">Personal</nuxt-link>
-          <nuxt-link to="/">Rate Calculator</nuxt-link>
+          <a class="opacity-70 my-1" target="_blank" href="https://flippay.co/">Business</a>
+          <a class="opacity-70 my-1" target="_blank" href="https://flippay.co/">Personal</a>
+          <a class="opacity-70 my-1" target="_blank" href="https://flippay.co/#calculategiftrate"
+            >Rate Calculator</a
+          >
         </div>
-        <div class="flex flex-col mb-4">
+        <div class="md:col-start-11 md:col-end-13 flex flex-col mb-4">
           <div class="font-bold mb-0.5 md:mb-3">Social media</div>
-          <div class="flex">
-            <nuxt-link to="/">
+          <div class="flex items-center">
+            <a target="_blank" href="https://www.instagram.com/flippay.co">
               <svg
-                class="w-4 mr-4"
+                class="w-6 mr-4"
                 viewBox="0 0 24 24"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -41,28 +49,48 @@
                   fill="#99CAFF"
                 />
               </svg>
-            </nuxt-link>
-            <nuxt-link to="/">
+            </a>
+            <a target="_blank" href="https://www.twitter.com/flippayconnect">
               <svg
-                class="w-4"
+                class="w-8 mr-4"
                 viewBox="0 0 24 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
               >
                 <path
-                  d="M0.473603 19.5949C2.6956 21.0049 5.2816 21.7499 7.9516 21.7499C11.8616 21.7499 15.4446 20.2479 18.0416 17.5209C20.5266 14.9109 21.8936 11.4039 21.8256 7.84489C22.7676 7.03889 23.8756 5.49989 23.8756 3.99989C23.8756 3.42489 23.2516 3.05989 22.7456 3.35289C21.8606 3.87289 21.0536 4.00889 20.2236 3.77589C18.5286 2.12389 16.0056 1.77589 13.8796 2.92189C12.0216 3.92189 10.9886 5.75189 11.0816 7.75189C7.94261 7.36889 5.0426 5.79489 3.0206 3.34889C2.6886 2.94989 2.0586 2.99689 1.7946 3.44889C0.820603 5.11689 0.830603 7.04989 1.6776 8.61089C1.2746 8.68189 1.0256 9.02089 1.0256 9.38789C1.0256 10.9569 1.7316 12.3989 2.8686 13.3829C2.6566 13.5869 2.5866 13.8899 2.6766 14.1599C3.1766 15.6619 4.3086 16.8359 5.7236 17.4239C4.1846 18.1589 2.4826 18.4039 0.967603 18.2179C0.183603 18.1119 -0.203397 19.1659 0.473603 19.5949ZM8.1566 17.6809C8.7176 17.2499 8.41961 16.3519 7.7156 16.3369C6.4756 16.3109 5.3466 15.6999 4.6436 14.7389C4.9826 14.7169 5.3336 14.6649 5.6676 14.5749C6.4286 14.3689 6.3926 13.2709 5.6196 13.1159C4.2166 12.8339 3.1156 11.8119 2.7026 10.4959C3.0796 10.5889 3.4636 10.6409 3.8466 10.6479C4.6056 10.6519 4.8926 9.67889 4.2736 9.27189C2.8786 8.35289 2.2836 6.72989 2.6776 5.20389C5.1136 7.67189 8.4186 9.15889 11.9146 9.32689C12.4156 9.35789 12.7916 8.88689 12.6816 8.40989C12.2066 6.35089 13.3566 4.90789 14.5916 4.24289C15.8136 3.58289 17.7756 3.37689 19.2796 4.95489C19.7266 5.42589 21.2346 5.44389 22.0016 5.26489C21.6576 5.91289 21.1286 6.52789 20.6336 6.87389C20.4226 7.02189 20.3016 7.26789 20.3146 7.52489C20.4756 10.8099 19.2516 14.0759 16.9566 16.4849C14.6446 18.9119 11.4476 20.2489 7.9526 20.2489C6.5626 20.2489 5.1996 20.0229 3.9116 19.5869C5.4516 19.2889 6.9146 18.6369 8.1566 17.6809Z"
+                  d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z"
                   fill="#99CAFF"
-                />
+                ></path>
               </svg>
-            </nuxt-link>
+            </a>
+            <a target="_blank" href="https://www.fb.me/flippay.co">
+              <svg class="w-8 mr-4" viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2m13 2h-2.5A3.5 3.5 0 0 0 12 8.5V11h-2v3h2v7h3v-7h3v-3h-3V9a1 1 0 0 1 1-1h2V5z"
+                  fill="#99CAFF"
+                ></path>
+              </svg>
+            </a>
+            <a target="_blank" href="https://www.youtube.com/channel/UCtOFv62PJyaHL_V8mlA4XaQ">
+              <svg class="w-8" viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M10 15l5.19-3L10 9v6m11.56-7.83c.13.47.22 1.1.28 1.9.07.8.1 1.49.1 2.09L22 12c0 2.19-.16 3.8-.44 4.83-.25.9-.83 1.48-1.73 1.73-.47.13-1.33.22-2.65.28-1.3.07-2.49.1-3.59.1L12 19c-4.19 0-6.8-.16-7.83-.44-.9-.25-1.48-.83-1.73-1.73-.13-.47-.22-1.1-.28-1.9-.07-.8-.1-1.49-.1-2.09L2 12c0-2.19.16-3.8.44-4.83.25-.9.83-1.48 1.73-1.73.47-.13 1.33-.22 2.65-.28 1.3-.07 2.49-.1 3.59-.1L12 5c4.19 0 6.8.16 7.83.44.9.25 1.48.83 1.73 1.73z"
+                  fill="#99CAFF"
+                ></path>
+              </svg>
+            </a>
           </div>
         </div>
       </div>
       <div class="text-center mt-5 opacity-70">
-        Made with ©Copyrights 2020. Flippay Tech. All rights reserved.
+        <p>© 2021 Flippay. co. All rights reserved.</p>
+        <p>
+          Flippay. co is owned by PayNyce Nigeria Ltd, a parent company
+          registered under the Corporate Affairs Commission (CAC) with RC
+          1731068
+        </p>
       </div>
     </div>
-  </div>
+  </footer>
 </template>
 
 <script>
