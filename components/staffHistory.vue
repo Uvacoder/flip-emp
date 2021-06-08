@@ -3,6 +3,7 @@
     class="
       my-container
       mt-8
+      sm:mt-0
       col-start-1
       xl:col-start-3
       sm:col-start-4

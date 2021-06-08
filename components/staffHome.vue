@@ -1,5 +1,5 @@
 <template>
-  <div class="my-container mt-8 col-start-1 xl:col-start-3 sm:col-start-4 col-end-13 bg-blue-100 py-8 bg-opacity-50">
+  <div class="my-container mt-8 sm:mt-0 col-start-1 xl:col-start-3 sm:col-start-4 col-end-13 bg-blue-100 py-8 bg-opacity-50">
     <Search />
     <div class="flex flex-col mx-auto items-center max-w-xs">
       <div>
