@@ -1,5 +1,6 @@
 <template>
   <div class="grid grid-cols-12 appear">
+    <mobileNav @toggleView="toggleView"/>
     <sidebar @toggleView="toggleView"/>
     <staffHome class="appear" :staffInfo="staffInfo" v-if="showTab === 'home'"/>
     <staffHistory class="appear" :staffInfo="staffInfo" v-if="showTab === 'history'"/>
@@ -10,11 +11,13 @@
 import sidebar from '~/components/sidebar'
 import staffHome from '~/components/staffHome'
 import staffHistory from '~/components/staffHistory'
+import mobileNav from '~/components/mobileNav.vue'
 export default {
   components: {
     sidebar,
     staffHome,
     staffHistory,
+    mobileNav,
   },
   data () {
     return {
