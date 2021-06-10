@@ -48,6 +48,9 @@ import staffHome from '~/components/staffHome'
 import staffHistory from '~/components/staffHistory'
 import mobileNav from '~/components/mobileNav.vue'
 export default {
+  head: {
+    title: 'Staff Info.'
+  },
   components: {
     sidebar,
     staffHome,
