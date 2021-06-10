@@ -4,9 +4,9 @@
       <nuxt-link to="/">
         <img class="sm:w-48 w-32" src="../assets/logo.svg" alt="">
       </nuxt-link>
-      <nuxt-link to="/">
+      <a href="https://flippay.co/login">
         <button>Sign in</button>
-      </nuxt-link>
+      </a>
     </div>
   </div>
 </template>

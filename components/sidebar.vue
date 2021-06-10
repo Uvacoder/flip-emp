@@ -101,8 +101,10 @@ export default {
   background: #ecf5ff;
   border-radius: 0 15px 15px 0;
   color: #007bff;
+  transition: 300ms;
 }
 .visible {
   opacity: 1;
+  transition: 300ms;
 }
 </style>

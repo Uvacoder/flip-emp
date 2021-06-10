@@ -1,10 +1,10 @@
 <template>
-  <footer class="my-container bg-blue-900">
-    <div class="py-16 text-white md:px-16">
+  <footer class="my-container footer_bg">
+    <div class="py-16 text-white md:px-16 text-base">
       <div
         class="grid grid-cols-1 sm:grid-cols-4 md:grid-cols-12 justify-between"
       >
-        <div class="md:col-start-1 md:col-end-7 flex flex-col mb-4 max-w-xs">
+        <div class="md:col-start-1 md:col-end-7 flex flex-col mb-6 max-w-xs">
           <div>
             <img
               class="mb-0.5 md:mb-3"
@@ -13,25 +13,25 @@
             />
           </div>
         </div>
-        <div class="md:col-start-7 md:col-end-9 flex flex-col mb-4">
-          <div class="font-bold mb-0.5 md:mb-3">Company</div>
-          <a class="opacity-70 my-1" target="_blank" href="https://flippay.co/about">About</a>
-          <a class="opacity-70 my-1" target="_blank" href="https://flippay.co/contact">Contact us</a>
+        <div class="md:col-start-7 md:col-end-9 flex flex-col mb-6">
+          <div class="font-bold mb-0.5 md:mb-3 text-lg">Company</div>
+          <a class="text-blue-300 my-2" target="_blank" href="https://flippay.co/about">About</a>
+          <a class="text-blue-300 my-2" target="_blank" href="https://flippay.co/contact">Contact us</a>
         </div>
-        <div class="md:col-start-9 md:col-end-11 flex flex-col mb-4">
-          <div class="font-bold mb-0.5 md:mb-3">Products</div>
-          <a class="opacity-70 my-1" target="_blank" href="https://flippay.co/">Business</a>
-          <a class="opacity-70 my-1" target="_blank" href="https://flippay.co/">Personal</a>
-          <a class="opacity-70 my-1" target="_blank" href="https://flippay.co/#calculategiftrate"
+        <div class="md:col-start-9 md:col-end-11 flex flex-col mb-6">
+          <div class="font-bold mb-0.5 md:mb-3 text-lg">Products</div>
+          <a class="text-blue-300 my-2" target="_blank" href="https://flippay.co/">Business</a>
+          <a class="text-blue-300 my-2" target="_blank" href="https://flippay.co/">Personal</a>
+          <a class="text-blue-300 my-2" target="_blank" href="https://flippay.co/#calculategiftrate"
             >Rate Calculator</a
           >
         </div>
-        <div class="md:col-start-11 md:col-end-13 flex flex-col mb-4">
-          <div class="font-bold mb-0.5 md:mb-3">Social media</div>
+        <div class="md:col-start-11 md:col-end-13 flex flex-col mb-6">
+          <div class="font-bold mb-0.5 md:mb-3 text-lg">Social media</div>
           <div class="flex items-center">
-            <a target="_blank" href="https://www.instagram.com/flippay.co">
+            <a class="my-2" target="_blank" href="https://www.instagram.com/flippay.co">
               <svg
-                class="w-6 mr-4"
+                class="w-5 mr-4"
                 viewBox="0 0 24 24"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -50,9 +50,9 @@
                 />
               </svg>
             </a>
-            <a target="_blank" href="https://www.twitter.com/flippayconnect">
+            <a class="my-2" target="_blank" href="https://www.twitter.com/flippayconnect">
               <svg
-                class="w-8 mr-4"
+                class="w-6 mr-4"
                 viewBox="0 0 24 24"
                 aria-hidden="true"
               >
@@ -62,16 +62,16 @@
                 ></path>
               </svg>
             </a>
-            <a target="_blank" href="https://www.fb.me/flippay.co">
-              <svg class="w-8 mr-4" viewBox="0 0 24 24" aria-hidden="true">
+            <a class="my-2" target="_blank" href="https://www.fb.me/flippay.co">
+              <svg class="w-6 mr-4" viewBox="0 0 24 24" aria-hidden="true">
                 <path
                   d="M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2m13 2h-2.5A3.5 3.5 0 0 0 12 8.5V11h-2v3h2v7h3v-7h3v-3h-3V9a1 1 0 0 1 1-1h2V5z"
                   fill="#99CAFF"
                 ></path>
               </svg>
             </a>
-            <a target="_blank" href="https://www.youtube.com/channel/UCtOFv62PJyaHL_V8mlA4XaQ">
-              <svg class="w-8" viewBox="0 0 24 24" aria-hidden="true">
+            <a class="my-2" target="_blank" href="https://www.youtube.com/channel/UCtOFv62PJyaHL_V8mlA4XaQ">
+              <svg class="w-6" viewBox="0 0 24 24" aria-hidden="true">
                 <path
                   d="M10 15l5.19-3L10 9v6m11.56-7.83c.13.47.22 1.1.28 1.9.07.8.1 1.49.1 2.09L22 12c0 2.19-.16 3.8-.44 4.83-.25.9-.83 1.48-1.73 1.73-.47.13-1.33.22-2.65.28-1.3.07-2.49.1-3.59.1L12 19c-4.19 0-6.8-.16-7.83-.44-.9-.25-1.48-.83-1.73-1.73-.13-.47-.22-1.1-.28-1.9-.07-.8-.1-1.49-.1-2.09L2 12c0-2.19.16-3.8.44-4.83.25-.9.83-1.48 1.73-1.73.47-.13 1.33-.22 2.65-.28 1.3-.07 2.49-.1 3.59-.1L12 5c4.19 0 6.8.16 7.83.44.9.25 1.48.83 1.73 1.73z"
                   fill="#99CAFF"
@@ -81,7 +81,7 @@
           </div>
         </div>
       </div>
-      <div class="text-center mt-5 opacity-70">
+      <div class="text-center mt-5 text-blue-300">
         <p>© 2021 Flippay. co. All rights reserved.</p>
         <p>
           Flippay. co is owned by PayNyce Nigeria Ltd, a parent company
@@ -98,4 +98,7 @@ export default {}
 </script>
 
 <style>
+.footer_bg{
+  background-color: #003E80;
+}
 </style>
