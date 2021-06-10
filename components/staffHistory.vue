@@ -1,19 +1,5 @@
 <template>
-  <div
-    class="
-      my-container
-      mt-8
-      sm:mt-0
-      col-start-1
-      xl:col-start-3
-      sm:col-start-4
-      col-end-13
-      bg-blue-100
-      py-8
-      bg-opacity-50
-    "
-  >
-    <Search />
+  <div class="my-container">
     <div class="flex flex-col lg:flex-row items-center lg:items-start lg:px-12">
       <div
         class="
@@ -38,7 +24,10 @@
           <div class="flex-col items-center md:items-start">
             <div class="my-1 font-semibold flex items-center">
               <div>
-                <svg class="w-2.5 fill-current text-gray-400 mr-1" viewBox="0 -31 512 512">
+                <svg
+                  class="w-2.5 fill-current text-gray-400 mr-1"
+                  viewBox="0 -31 512 512"
+                >
                   <path d="m211 240h90v30h-90zm0 0" />
                   <path
                     d="m415.378906 270h-84.378906v15c0 8.289062-6.710938 15-15 15h-120c-8.289062 0-15-6.710938-15-15v-15h-84.378906c-19.394532 0-36.546875-12.363281-42.6875-30.761719l-53.933594-161.828125v327.589844c0 24.8125 20.1875 45 45 45h422c24.8125 0 45-20.1875 45-45v-327.578125l-53.9375 161.816406c-6.136719 18.398438-23.289062 30.761719-42.683594 30.761719zm0 0"
