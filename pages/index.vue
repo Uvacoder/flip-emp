@@ -14,15 +14,13 @@
           <div class="border border-gray-300 px-1 py-1 rounded flex justify-between items-center">
             <form @submit.prevent="fetchStaffInfo" action="">
               <input
-                @keyup.backspace="setSearchChange"
-                @keypress="setSearchChange"
                 v-model="staffInfo"
                 class="py-2"
                 placeholder="Type name here"
                 type="text"
               />
             </form>
-            <div @click="fetchStaffInfo" :class="{ show: searchChange, hide: !searchChange }" class="bg-blue-400 p-2 rounded">
+            <div @click="fetchStaffInfo" :class="{ show: $v.staffInfo.required, hide: !$v.staffInfo.required }" class="bg-blue-400 p-2 rounded">
               <svg
                 class="w-5 fill-current text-white"
                 viewBox="0 0 451.111 451.111"
@@ -40,6 +38,7 @@
 </template>
 
 <script>
+import { required } from 'vuelidate/lib/validators'
 import appHeader from '~/components/appHeader'
 export default {
   components: [
@@ -51,14 +50,19 @@ export default {
       staffInfo: ''
     }
   },
+  validations: {
+    staffInfo: {
+      required,
+    }
+  },
   methods: {
-    setSearchChange () {
-      if (this.staffInfo !== '') {
-        this.searchChange = true
-      } else {
-        this.searchChange = false
-      }
-    },
+    // setSearchChange () {
+    //   if (this.staffInfo !== '') {
+    //     this.searchChange = true
+    //   } else {
+    //     this.searchChange = false
+    //   }
+    // },
     fetchStaffInfo () {
       this.$router.push('/home')
     }
