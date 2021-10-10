@@ -45,7 +45,7 @@ html {
 }
 
 button {
-  @apply bg-blue-500;
+  @apply bg-green-500;
   @apply px-3;
   @apply py-2;
   @apply rounded-md;
