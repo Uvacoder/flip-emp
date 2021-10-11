@@ -28,6 +28,7 @@ export default {
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
     { src: '~/plugins/vuelidate.js' },
+    { src: '~/plugins/notifications', ssr: false }
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -37,14 +38,23 @@ export default {
   buildModules: [
     // https://go.nuxtjs.dev/tailwindcss
     '@nuxtjs/tailwindcss',
+    '@nuxtjs/apollo'
   ],
+
+  apollo: {
+    clientConfigs: {
+      default: {
+        httpEndpoint: 'https://veryapi.flippay.co/graphql'
+      }
+    }
+  },
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
   ],
-
+  
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {},
 

@@ -1,36 +1,42 @@
 <template>
   <div class="appear">
     <appHeader />
-    <div class="h-screen mt-48 mx-auto">
-      <div class="max-w-xs mx-auto text-center">
-        <div class="flex flex-col px-3">
+    <div class="h-screenmx-auto">
+      <div class="max-w-lg mx-auto text-center">
+        <div class="flex flex-col h-screen items-center justify-center px-3">
           <div class="font-bold text-2xl text-gray-800">
             Know the status of a Flippay employee
           </div>
           <div class="my-2">
-            This website allows you to find out if someones works at Flippay their
-            status, role at Flippay
+            This website allows you to find out if someones works at Flippay,
+            their status, role at Flippay.
           </div>
-          <div class="border border-gray-300 px-1 py-1 rounded flex justify-between items-center">
-            <form @submit.prevent="fetchStaffInfo" action="">
-              <input
-                v-model="staffInfo"
-                class="py-2"
-                placeholder="Type name here"
-                type="text"
+          <form @submit.prevent="fetchEmployee" action="">
+            <input
+              v-model="staffId"
+              class="w-full py-2 px-2 border border-gray-400 rounded my-4"
+              placeholder="Type name here"
+              type="text"
+            />
+          </form>
+          <button
+            @click="fetchEmployee"
+            :class="{
+              show: $v.staffId.required,
+              hide: !$v.staffId.required,
+              disabled: loading,
+            }"
+            class="bg-blue-400 p-2 rounded w-12"
+          >
+            <svg
+              class="w-5 mx-auto fill-current text-white"
+              viewBox="0 0 451.111 451.111"
+            >
+              <path
+                d="m257.778 32.222-48.333 48.333 112.778 112.778h-322.223v64.444h322.222l-112.777 112.779 48.333 48.333 193.333-193.333z"
               />
-            </form>
-            <div @click="fetchStaffInfo" :class="{ show: $v.staffInfo.required, hide: !$v.staffInfo.required }" class="bg-blue-400 p-2 rounded">
-              <svg
-                class="w-5 fill-current text-white"
-                viewBox="0 0 451.111 451.111"
-              >
-                <path
-                  d="m257.778 32.222-48.333 48.333 112.778 112.778h-322.223v64.444h322.222l-112.777 112.779 48.333 48.333 193.333-193.333z"
-                />
-              </svg>
-            </div>
-          </div>
+            </svg>
+          </button>
         </div>
       </div>
     </div>
@@ -40,39 +46,72 @@
 <script>
 import { required } from 'vuelidate/lib/validators'
 import appHeader from '~/components/appHeader'
+import { mapMutations } from 'vuex'
+import gql from 'graphql-tag'
+
+const findEmployee = gql`
+  query findEmployee($empId: String) {
+    findEmployee(empId: $empId) {
+      emId
+    }
+  }
+`
+
 export default {
-  components: [
-    appHeader
-  ],
-  data () {
+  name: 'Search',
+  components: { appHeader },
+  data() {
     return {
-      searchChange: false,
-      staffInfo: ''
+      staffId: '',
+      loading: false,
     }
   },
   validations: {
-    staffInfo: {
+    staffId: {
       required,
-    }
+    },
   },
   methods: {
-    // setSearchChange () {
-    //   if (this.staffInfo !== '') {
-    //     this.searchChange = true
-    //   } else {
-    //     this.searchChange = false
-    //   }
-    // },
-    fetchStaffInfo () {
-      this.$router.push('/home')
-    }
+    async fetchEmployee() {
+      if (!this.$v.staffId.required) {
+        this.$notify({
+          title: 'Error',
+          text: 'Text field is empty',
+          type: 'error',
+        })
+      } else {
+        this.loading = true
+        const res = await this.$apollo
+          .query({
+            query: findEmployee,
+            variables: {
+              empId: this.staffId,
+            },
+          })
+          .then((res) => {
+            if (res.data) {
+              this.$store.commit('updateEmpId', res.data.findEmployee.emId)
+              this.staffId = ''
+              this.$router.push('/home')
+            }
+          })
+          .catch((err) => {
+            this.$notify({
+              title: 'Error',
+              text: err.message,
+              type: 'error',
+            })
+            this.loading = false
+          })
+      }
+    },
   },
 }
 </script>
 
 <style scoped>
-input {
-  border: none;
+button {
+  outline: none;
 }
 .show {
   opacity: 1;
@@ -82,5 +121,13 @@ input {
 .hide {
   opacity: 0;
   transition: 500ms;
+}
+.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.disabled:hover {
+  cursor: not-allowed;
 }
 </style>

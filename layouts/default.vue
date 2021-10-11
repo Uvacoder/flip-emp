@@ -2,6 +2,7 @@
   <div>
     <!-- <appHeader /> -->
     <Nuxt />
+    <notifications animation-type="velocity"/>
     <appFooter />
   </div>
 </template>
@@ -45,7 +46,7 @@ html {
 }
 
 button {
-  @apply bg-green-500;
+  @apply bg-blue-500;
   @apply px-3;
   @apply py-2;
   @apply rounded-md;
@@ -56,10 +57,10 @@ input:focus {
   @apply outline-none;
 }
 
-.appear {
+/* .appear {
   animation-name: appear;
   animation-duration: 1000ms;
-}
+} */
 
 @keyframes appear {
   0% {opacity: 0;}

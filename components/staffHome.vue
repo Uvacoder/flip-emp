@@ -11,7 +11,7 @@
       <h1 class="font-bold text-2xl my-1">{{ staffInfo.name }}</h1>
       <div class="flex justify-between w-full my-1">
         <div class="text-gray-400">Current Role</div>
-        <div class="font-semibold">{{ staffInfo.currentRole }}</div>
+        <div class="font-semibold">{{ staffInfo.currentR }}</div>
       </div>
       <div class="flex justify-between w-full my-1">
         <div class="text-gray-400">Email</div>
@@ -19,15 +19,15 @@
       </div>
       <div class="flex justify-between w-full my-1">
         <div class="text-gray-400">Employee id</div>
-        <div class="font-semibold">{{ staffInfo.employeeId }}</div>
+        <div class="font-semibold">{{ staffInfo.emId }}</div>
       </div>
       <div class="flex justify-between w-full my-1">
         <div class="text-gray-400">Date of employment</div>
-        <div class="font-semibold">{{ staffInfo.dateOfEmployment }}</div>
+        <div class="font-semibold">{{ staffInfo.doe }}</div>
       </div>
       <div class="flex justify-between w-full my-1">
         <div class="text-gray-400">Status</div>
-        <div v-if="staffInfo.status" class="font-semibold flex items-center">
+        <div v-if="staffInfo.active" class="font-semibold flex items-center">
           <div>
             <svg
               class="w-2.5 mr-1 fill-current text-green-300"

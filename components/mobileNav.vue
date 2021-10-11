@@ -1,5 +1,5 @@
 <template>
-  <div class="fixed w-full">
+  <div class="fixed w-full h-0">
     <div
       class="
         sm:hidden
@@ -72,7 +72,7 @@
       :class="{ showNav: mobile, hideNav: !mobile }"
       class="bg-white sm:hidden flex justify-evenly items-center text-gray-500"
     >
-      <div @click="toggleView('home')" class="flex my-4">
+      <div :class="{ active: tab === 'home' }" @click="toggleView('home')" class="flex my-4">
         <svg
           class="w-6 mr-2 fill-current"
           xmlns="http://www.w3.org/2000/svg"
@@ -84,7 +84,7 @@
         </svg>
         <div>Home</div>
       </div>
-      <div @click="toggleView('history')" class="flex my-4">
+      <div :class="{ active: tab === 'history' }" @click="toggleView('history')" class="flex my-4">
         <svg
           class="w-6 mr-2 fill-current"
           viewBox="0 0 16 14"
@@ -109,6 +109,7 @@ export default {
   data() {
     return {
       mobile: false,
+      tab: 'home',
     }
   },
   methods: {
@@ -117,13 +118,20 @@ export default {
     },
     toggleView(data) {
       this.$emit('toggleView', data)
-      this.mobile = false
+      this.tab = data
+      // this.mobile = false
     },
   },
 }
 </script>
 
-<style>
+<style scoped>
+.active {
+  border-radius: 0 15px 15px 0;
+  color: #007bff;
+  transition: 300ms;
+}
+
 .hideNav {
   transform: translateY(-500%);
   transition: 1000ms;

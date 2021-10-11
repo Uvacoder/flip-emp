@@ -38,11 +38,11 @@
                 </svg>
               </div>
               <div>
-                {{ staffInfo.currentRole }}
+                {{ staffInfo.currentR }}
               </div>
             </div>
             <div
-              v-if="staffInfo.status"
+              v-if="staffInfo.active"
               class="font-semibold flex items-center"
             >
               <svg
@@ -82,25 +82,13 @@
         </div>
       </div>
       <div>
-        <div class="w-96 px-10" v-for="(milestone, i) in staffHistory" :key="i">
-          <div v-if="milestone.duration" class="bg-white p-4 mb-3 rounded-lg">
+        <div class="w-96 px-10" v-for="(milestone, i) in staffInfo.history" :key="i">
+          <div class="bg-white p-4 mb-3 rounded-lg">
             <div class="font-semibold">{{ milestone.role }}</div>
-            <div class="flex justify-between mt-3">
+            <div class="flex gap-x-6 justify-between mt-3">
               <div class="text-gray-400">Duration</div>
               <div class="font-semibold text-blue-800">
                 {{ milestone.duration }}
-              </div>
-            </div>
-          </div>
-          <div
-            v-else-if="milestone.dateOfEmployment"
-            class="bg-white p-4 mb-3 rounded-lg"
-          >
-            <div class="font-semibold">{{ milestone.role }}</div>
-            <div class="flex justify-between mt-3">
-              <div class="text-gray-400">Employment date</div>
-              <div class="font-semibold text-blue-800">
-                {{ milestone.dateOfEmployment }}
               </div>
             </div>
           </div>
@@ -117,16 +105,6 @@ export default {
     Search,
   },
   props: ['staffInfo'],
-  data() {
-    return {
-      staffHistory: this.staffInfo.staffHistory,
-    }
-  },
-  methods: {
-    print() {
-      console.log(this.staffHistory)
-    },
-  },
 }
 </script>
 

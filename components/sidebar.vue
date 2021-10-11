@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-white min-h-screen hidden sm:flex flex-col col-start-1 col-end-4 xl:col-end-3">
+  <div class="bg-white min-h-screen hidden sm:flex flex-col col-start-1 col-end-4 xl:col-end-3 border-r border-gray-300">
     <div>
       <nuxt-link to="/" class="">
         <img class="mx-auto my-8" src="../assets/logo.svg" alt="" />
@@ -96,7 +96,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .active {
   background: #ecf5ff;
   border-radius: 0 15px 15px 0;
