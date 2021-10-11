@@ -72,7 +72,7 @@ export default {
           .catch((err) => {
             this.$notify({
               title: 'Error',
-              text: err.message,
+              text: 'No employee with such ID found!',
               type: 'error',
             })
             this.empId = ''
