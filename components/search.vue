@@ -49,6 +49,7 @@ export default {
   },
   methods: {
     async fetchEmployeeInfo() {
+      this.empId = this.empId.toUpperCase()
       if (!this.$v.empId.required) {
         this.$notify({
           title: 'Error',

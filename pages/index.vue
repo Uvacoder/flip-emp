@@ -22,8 +22,6 @@
           <button
             @click="fetchEmployee"
             :class="{
-              show: $v.staffId.required,
-              hide: !$v.staffId.required,
               disabled: loading,
             }"
             class="bg-blue-400 p-2 rounded w-12"
@@ -73,6 +71,7 @@ export default {
   },
   methods: {
     async fetchEmployee() {
+      this.staffId = this.staffId.toUpperCase()
       if (!this.$v.staffId.required) {
         this.$notify({
           title: 'Error',
@@ -112,15 +111,6 @@ export default {
 <style scoped>
 button {
   outline: none;
-}
-.show {
-  opacity: 1;
-  transition: 500ms;
-  cursor: pointer;
-}
-.hide {
-  opacity: 0;
-  transition: 500ms;
 }
 .disabled {
   opacity: 0.5;
