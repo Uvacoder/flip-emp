@@ -1,13 +1,13 @@
 <template>
   <div>
-    <div>
+    <scanner v-if="scanner" />
+    <div class="flex flex-col items-center my-5">
       <form @submit.prevent="fetchEmployeeInfo">
         <input
           v-model="empId"
           class="
             block
             mx-auto
-            mb-10
             border border-gray-300
             text-xs
             pl-2
@@ -19,12 +19,14 @@
           type="text"
         />
       </form>
+      <p @click="toggleScanner" class="my-2 text-blue-500 underline lg:hidden">Or scan QR-Code</p>
     </div>
   </div>
 </template>
 
 <script>
 import { required } from 'vuelidate/lib/validators'
+import scanner from '~/components/scanner.vue'
 import { mapMutations } from 'vuex'
 import gql from 'graphql-tag'
 
@@ -37,9 +39,13 @@ const findEmployee = gql`
 `
 
 export default {
+  components: {
+    scanner
+  },
   data() {
     return {
       empId: '',
+      scanner: false
     }
   },
   validations: {
@@ -78,6 +84,9 @@ export default {
             this.empId = ''
           })
       }
+    },
+    toggleScanner() {
+      this.scanner = !this.scanner
     },
   },
 }

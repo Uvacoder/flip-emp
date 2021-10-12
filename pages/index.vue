@@ -16,7 +16,7 @@
             <input
               v-model="staffId"
               class="w-full py-2 px-2 border border-gray-400 rounded my-4"
-              placeholder="Type name here"
+              placeholder="Type ID here"
               type="text"
             />
             <button
@@ -32,7 +32,7 @@
             </svg>
           </button>
           </form>
-          <p @click="toggleScanner" class="my-2 text-blue-500 underline">Or scan QR-Code</p>
+          <p @click="toggleScanner" class="my-2 text-blue-500 underline lg:hidden">Or scan QR-Code</p>
         </div>
       </div>
     </div>
@@ -97,7 +97,7 @@ export default {
           .catch((err) => {
             this.$notify({
               title: 'Error',
-              text: 'No employee with such ID found!',
+              text: 'No employee with such ID found! Or check your network and try again',
               type: 'error',
             })
             this.loading = false
