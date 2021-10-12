@@ -124,7 +124,7 @@ export default {
           this.$router.push('/')
           this.$notify({
             title: 'Error',
-            text: 'No employee with such ID found!',
+            text: 'No employee with such ID found! Or check your network and try again',
             type: 'error',
           })
         })
