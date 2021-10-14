@@ -4,7 +4,6 @@
     <div class="flex flex-col items-center my-5">
       <form @submit.prevent="fetchEmployeeInfo">
         <input
-          type="search"
           v-model="empId"
           name="emp-ID"
           class="
