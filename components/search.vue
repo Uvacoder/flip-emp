@@ -6,6 +6,7 @@
         <input
           type="search"
           v-model="empId"
+          name="emp-ID"
           class="
             block
             mx-auto
@@ -18,8 +19,22 @@
           "
           placeholder="Search for a staff"
         />
+        <button
+          :class="{
+            disabled: loading,
+          }"
+          class="bg-blue-500 hover:bg-blue-400 p-2 rounded w-10 mx-auto block my-2"
+        >
+          <svg class="w-5 mx-auto fill-current" viewBox="0 0 451.111 451.111">
+            <path
+              d="m257.778 32.222-48.333 48.333 112.778 112.778h-322.223v64.444h322.222l-112.777 112.779 48.333 48.333 193.333-193.333z"
+            />
+          </svg>
+        </button>
       </form>
-      <p @click="toggleScanner" class="my-2 text-blue-500 underline lg:hidden">Or scan QR-Code</p>
+      <p @click="toggleScanner" class="my-2 text-blue-500 underline lg:hidden">
+        Or scan QR-Code
+      </p>
     </div>
   </div>
 </template>
@@ -40,12 +55,13 @@ const findEmployee = gql`
 
 export default {
   components: {
-    scanner
+    scanner,
   },
   data() {
     return {
       empId: '',
-      scanner: false
+      scanner: false,
+      loading: false,
     }
   },
   validations: {
@@ -63,6 +79,7 @@ export default {
           type: 'error',
         })
       } else {
+        this.loading = true
         const res = await this.$apollo
           .query({
             query: findEmployee,
@@ -71,17 +88,15 @@ export default {
             },
           })
           .then((res) => {
-            this.$store.commit('updateEmpId', res.data.findEmployee.emId)
-            this.empId = ''
-            console.log(res)
+            this.$router.push(`/scan/${res.data.findEmployee.emId}`)
           })
           .catch((err) => {
+            this.loading = false
             this.$notify({
               title: 'Error',
               text: 'No employee with such ID found! Or check your network and try again',
               type: 'error',
             })
-            this.empId = ''
           })
       }
     },

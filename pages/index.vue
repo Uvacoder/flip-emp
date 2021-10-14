@@ -15,6 +15,7 @@
           <form @submit.prevent="fetchEmployee" action="">
             <input
               v-model="staffId"
+              name="emp-ID"
               class="w-full py-2 px-2 border border-gray-400 rounded my-4"
               placeholder="Type ID here"
               type="text"
@@ -119,7 +120,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
 button {
   outline: none;
 }
