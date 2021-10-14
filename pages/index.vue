@@ -20,19 +20,27 @@
               type="text"
             />
             <button
-            :class="{
-              disabled: loading,
-            }"
-            class="bg-blue-500 hover:bg-blue-400 p-2 rounded w-10"
-          >
-            <svg class="w-5 mx-auto fill-current" viewBox="0 0 451.111 451.111">
-              <path
-                d="m257.778 32.222-48.333 48.333 112.778 112.778h-322.223v64.444h322.222l-112.777 112.779 48.333 48.333 193.333-193.333z"
-              />
-            </svg>
-          </button>
+              :class="{
+                disabled: loading,
+              }"
+              class="bg-blue-500 hover:bg-blue-400 p-2 rounded w-10"
+            >
+              <svg
+                class="w-5 mx-auto fill-current"
+                viewBox="0 0 451.111 451.111"
+              >
+                <path
+                  d="m257.778 32.222-48.333 48.333 112.778 112.778h-322.223v64.444h322.222l-112.777 112.779 48.333 48.333 193.333-193.333z"
+                />
+              </svg>
+            </button>
           </form>
-          <p @click="toggleScanner" class="my-2 text-blue-500 underline lg:hidden">Or scan QR-Code</p>
+          <p
+            @click="toggleScanner"
+            class="my-2 text-blue-500 underline lg:hidden"
+          >
+            Or scan QR-Code
+          </p>
         </div>
       </div>
     </div>

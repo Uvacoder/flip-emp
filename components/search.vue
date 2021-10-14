@@ -4,6 +4,7 @@
     <div class="flex flex-col items-center my-5">
       <form @submit.prevent="fetchEmployeeInfo">
         <input
+          type="search"
           v-model="empId"
           class="
             block
@@ -16,7 +17,6 @@
             w-72
           "
           placeholder="Search for a staff"
-          type="text"
         />
       </form>
       <p @click="toggleScanner" class="my-2 text-blue-500 underline lg:hidden">Or scan QR-Code</p>

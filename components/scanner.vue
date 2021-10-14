@@ -21,7 +21,7 @@ export default {
     onDecode (decodedString) {
       // window.location.replace(decodedString);
       // console.log(decodedString.slice(26))
-      this.$router.push(`/${decodedString.slice(26)}`)
+      this.$router.push(`/scan/${decodedString.slice(26)}`)
     }
   }
 }
