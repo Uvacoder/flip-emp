@@ -84,7 +84,7 @@
       <div class="text-center mt-5 text-blue-300">
         <p>© 2021 Flippay. co. All rights reserved.</p>
         <p>
-          Flippay. co is owned by PayNyce Nigeria Ltd, a parent company
+          Flippay.co is owned by PayNyce Nigeria Ltd, a parent company
           registered under the Corporate Affairs Commission (CAC) with RC
           1731068
         </p>
